@@ -42,6 +42,7 @@ The following is the overall workflow of our MEW process:
 
 ### Repository Structure
 
+Maybe not important, throwout if not necessary [keep right now though]
 ```text
 .
 ├── README.md
