@@ -42,8 +42,6 @@ The following is the overall workflow of our MEW process:
 
 ### Repository Structure
 
-the following is a quick example (consult with what to add and such...) 
-
 ```text
 .
 ├── README.md
