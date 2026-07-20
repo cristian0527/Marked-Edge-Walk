@@ -29,7 +29,7 @@ The following is the overall workflow of our MEW process:
 2. Choose Constraints for the Energy Function
 	* Decide on what parameters to be taken into account with the energy function. For our analysis, we set on compactness/cut-edges and county splits.
 3. Select an Energy Function
-	* Across our eight states, we either were set on the Gaussian approach or the exponential/minimized approach.
+	* Across our eight states, we used either the Gaussian approach or the exponential/minimized approach
 4. Set Beta & Target Values
 	* Based on the currently enacted plan statistics on compactness and county splits, tune the parameters so we may sample from a target distribution that's similar so we may draw baseline comparisons
 5. Base Test & Calibrate
@@ -44,7 +44,7 @@ The following is the overall workflow of our MEW process:
 
 Before walking through each step in depth, it is essential to first get familiar with the main files in this repository and what they do.
 
-### Table of Content for Main Files
+**Table of Content for Main Files**
 
 | File | About |
 |---|---|
@@ -53,7 +53,7 @@ Before walking through each step in depth, it is essential to first get familiar
 | `link_cut_MEW/lct_run_{STATE}`| These state-by-state files runs the MEW chain from `lct_mew.jl` for each state. Each state has its own version of this file, differing mainly in district count, population tolerance, data path, run length, and the energy function's targets and betas tuned to the state's currently enacted political map. `prepare_warm_start` helps prepare the chain to be ready to begin from either an enacted district plan or from a random seed map generated with ReCom.|
 | `{STATE}/`| These state-by-state folders hold each state's data, such as the `.shp` shapefile, its corresponding dual graph, and a set of random seed `.json` plans generated with ReCom MCMC.|
 | `batched_runner_warm{STATE}`| These state-by-state batched-runner files run the MEW algorithm for each state. |
-| `push_reader_claude_w_cuts_{STATE}`| These state-by-state files turns the raw MEW ensemble file into accessible data. The files For every run, at each step the partition's data is recorded, such as sorted Democratic vote shares, sorted Black population shares, county split count, and cut-edges count. After the MEW ensemble data is saved, plotting exists that generates plots comparing Democratic vote share per district, as well as Black population vote share. Also code is present to plot compactness and cut-edges counts throughout the ensemble run.|
+| `push_reader_claude_w_cuts_{STATE}`| These state-by-state files turns the raw MEW ensemble file into accessible data. For every run, at each step the partition's data is recorded, such as sorted Democratic vote shares, sorted Black population shares, county split count, and cut-edges count. After the MEW ensemble data is saved, plotting exists that generates plots comparing Democratic vote share per district, as well as Black population vote share. Also code is present to plot compactness and cut-edges counts throughout the ensemble run.|
 | `seed_matcher{STATE}`| This state-by-state file is a safety net to make sure that a seed is useable as a warm start for the Marked Edge Walk.| 
 
 **Note on {STATE}:** {STATE} is a placeholder for a state's abbreviation (e.g. `AL`, `FL`, `GA`). Each state has its own copy of these files following the same naming convention.
