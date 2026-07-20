@@ -12,7 +12,7 @@ In late April 2026, the Supreme Court decided a Louisiana congressional map was 
 
 This repository analyzes what redistricting would look like in those eight states Cohn argued in his NYT article through the Marked Edge Walk. These eight states are Alabama, Georgia, Florida, Louisiana, Mississippi, North Carolina, South Carolina, and Tennessee. In our analysis, we find sampling distributions that are similar to the current enacted congressional plan in each state, and then generate large ensembles of redistricting plans to grasp an understanding of minority representation across plans. We rely on the Marked Edge Walk to carry out our analysis since the algorithm has the useful property to sample from a targeted distribution.
 
-For a thorough walk of our analysis, please see the following report of our analysis: __link__
+For a thorough walkthrough of our analysis, please see the following report: __link__
 
 ### Summary of the Marked Edge Walk
 
