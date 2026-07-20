@@ -1,0 +1,10 @@
+{
+    "julia.environmentPath": "/Users/atticusmcwhorter/Dartmouth College Dropbox/Atticus McWhorter/MEW_stuff/MEW_walkthrough",
+    "python-envs.pythonProjects": [
+        {
+            "path": "",
+            "envManager": "ms-python.python:venv",
+            "packageManager": "ms-python.python:pip"
+        }
+    ]
+}
