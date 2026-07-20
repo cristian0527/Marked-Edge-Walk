@@ -50,9 +50,8 @@ Before walking through each step in depth, it is essential to first get familiar
 |---|---|
 | `post_do_a_quick_little_thing.ipynb` | Transforms a State's Processed Precincts `.json` file into a dual graph so we may carry out our analysis in Julia|
 | `link_cut_MEW/lct_mew.jl`| Functions for the Marked Edge Walk using Link-Cut Trees. These functions define the energy terms. `make_combined_energy_gaussian` combines county splits and compactness into a single energy function of the Gaussian form: `-beta*((new - target)^2 - (old - target)^2)`. `rep_voteshare_score_vector_gaussian` ranks districts by Republican vote share, from least to most Republican, and assigns each ranked district its own target voteshare. Each district earns a reward as its voteshare climbs toward its target, but gets penalized if it goes past that target. `make_combined_gaussian_party_energy` plugs this republican voteshare gaussian function and is introduced as a term into the energy function from before.
-| `link_cut_MEW/lct_run_{STATE}`| mew |
-| `Marked_edges/beano2.2_WI.jl`| mew |
-| `{STATE}/`| mew |
+| `link_cut_MEW/lct_run_{STATE}`| These files runs the MEW chain from `lct_mew.jl` for each state. Each state has its own version of this file, differing mainly in district count, population tolerance, data path, run length, and the energy function's targets and betas tuned to the state's currently enacted political map. Towards the end of the file, there is a `prepare_warm_start` that prepares the chain ready to begin from either an enacted district map or from a loaded random seed map generated with ReCom |
+| `{STATE}/`| These state-by-state folders hold each state's data, such as the `.shp` shapefile, its corresponding dual graph, and a set of random seed `.json` plans generated with ReCom MCMC |
 | `batched_runner_warm{STATE}`| mew |
 | `push_reader_claude_w_cuts_{STATE}`| mew |
 | `seed_matcher{STATE}`| mew |
