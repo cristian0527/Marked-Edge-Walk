@@ -1,7 +1,3 @@
-# IMPORTANT
-- change file names so that they are more clearer for general audience (such as post_do_a...)
-
-
 # The Marked Edge Walk (MEW) for a Statistical Analysis of Minority Representation after Callais
 
 This repository is the keepsake of Professor Daryl DeFord's Undergraduate Research Summer Institute group at Vassar College, which endeavors to analyze the future of Southern States post Louisiana v. Callais.
