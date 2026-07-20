@@ -20,7 +20,7 @@ For a thorough walkthrough on the Marked Edge Walk, please see the following pap
 
 ## How to MEW (Marked Edge Walk)
 
-From here on, we will explain how to run the Marked Edge Walk (MEW) to replicate results from our analysis. Or, if you're curious, you may use this guide to play around with the parameters or try the analysis on a new state of your choice.
+From here on, we will explain how to run the Marked Edge Walk (MEW) to replicate results from our analysis. Or, if you're curious, you may use this guide to play around with the parameters or try the analysis on a new state of your choice (e.g. Texas)
 
 The following is the overall workflow of our MEW process:
 
