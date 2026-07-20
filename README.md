@@ -8,6 +8,8 @@ The Marked Edge Walk is a Markov Chain Monte Carlo (MCMC) algorithm that is impl
 
 For a thorough walkthrough on the Mark Edge Walk, please see the following paper by Professor DeFord and Atticus: https://arxiv.org/abs/2510.17714v2
 
+
+
 ## How to MEW (Marked Edge Walk)
 
 
