@@ -40,9 +40,24 @@ The following is the overall workflow of our MEW process:
 15. Run a Lengthy Ensemble
 	* Once we are set on parameters, prepare to do a long ensemble run that is from the millions and onwards.
 
+### Repository Files
 
+Before walking through each step in depth, it is essential to first get familiar with the main files in this repository and what they do.
 
-**File:** `config.yaml` example? 
+### Table name
+
+| File | About |
+|---|---|
+| `post_do_a_quick_little_thing.ipynb` | Transforms a State's Processed Precincts `.json` file into a dual graph so we may carry out our analysis in Julia|
+| `link_cut_MEW/lct_mew.jl`| Functions for the Marked Edge Walk using Link-Cut Trees. These functions define the energy terms. `make_combined_energy` combines county splits and compactness into a single energy function of the Gaussian form: `-beta*((new - target)^2 - (old - target)^2)`. This function is the original energy function variant. `rep_voteshare_score_vector_gaussian` ... [finish mew] |
+| `link_cut_MEW/lct_run_{STATE}`| mew |
+| `Marked_edges/beano2.2_WI.jl`| mew |
+| `{STATE}/`| mew |
+| `batched_runner_warm{STATE}`| mew |
+| `push_reader_claude_w_cuts_{STATE}`| mew |
+| `seed_matcher{STATE}`| mew |
+
+**STATE:** placeholder - explain what this is 
 
 
 
