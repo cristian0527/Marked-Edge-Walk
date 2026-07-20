@@ -8,16 +8,23 @@ For a thorough walkthrough on the Mark Edge Walk, please see the following paper
 
 ## How to MEW (Marked Edge Walk)
 
-### Structure of Code-base
+### Repository Structure
 
-the following is an example
+the following is a quick example (consult with what to add and such...) 
 
-```tree
-src / comment here
-+app
-++main.cpp
-++util.cpp
-+include
-++util.h
+```text
+.
+├── README.md
+├── Project.toml
+├── State
+│   ├── dual graph
+│   ├── shp
+│   ├── seed json
+├── post_do_a_quick_little_thing.ipynb
+├── link_cut_MEW
+│   ├── lct_run_{STATE}.jl
+│   ├── lct_MEW.jl
+└── Marked_edges
+    └── beano2.2_WI.jl
 ```
 
