@@ -8,6 +8,10 @@ First of all, we would like to thank Atticus McWhorter for joining us in our sum
 
 [quick overview of what our purpose is with our analysis, why we are studying this, and discuss why we are using MEW.] 
 
+In late April 2026, the Supreme Court decided a Louisiana congressional map was unconstitutional due to race being a predominant factor in creating the districts. This case, Louisiana v. Callais, significantly reduces protections for minority representation through the Voting Rights Act. Following this case, there have been questions, concerns, and speculation surrounding how this case will impact minority representation throughout the case. One recent New York Times article written by Nate Cohn claimed that the Voting Rights Act did not create additional representation for minority voters and that race blind redistricting would maintain this representation.
+
+This repository ananlyzes what redistricting would look like in those eight states Cohn argued in his NYT article through the Marked Edge Walk. The eight states are Alabama, Georgia, Florida, Louisiana, Mississippi, North Carolina, South Carolina, and Tennessee. In our analysis, we find sampling distributions that are similiar to the current enacted congressional plan in each state, and then generate large ensembles of redistricting plans to grasp an understanding of minority representation across plans. We rely on the Marked Edge Walk to carryout our analysis since the algorithm has the outstanding property to sample from a targeted distribution.
+
 ### Summary of the Marked Edge Walk
 
 The Marked Edge Walk is a Markov Chain Monte Carlo (MCMC) algorithm that is implemented for generating ensembles of redistricting plans by sampling from a tuneable targeted distribution. This algorithm utilizes a spanning tree with marked edges, which moves between districting plans through small adjustments to the tree. In comparison to other redistricting algorithms, such as ReCom, the Marked Edge Walk is capable of calculating transition probabilities, making it more desirable in sampling plans from such targeted distributions.
