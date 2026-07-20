@@ -10,15 +10,14 @@ For a thorough walkthrough on the Mark Edge Walk, please see the following paper
 
 ### Structure of Code-base
 
-the following is an example *set this up later on*
-.
-├── .github
-│   └── workflows
-│       └── main.yml
-├── LICENCE
-├── README.md
-├── action.yml
-├── main.py
-├── tree.bak
-└── tree.sh
+the following is an example
+
+```tree
+src / comment here
++app
+++main.cpp
+++util.cpp
++include
+++util.h
+```
 
