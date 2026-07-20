@@ -44,7 +44,7 @@ The following is the overall workflow of our MEW process:
 
 Before walking through each step in depth, it is essential to first get familiar with the main files in this repository and what they do.
 
-### Table of Files
+### Table of Content for Files
 
 | File | About |
 |---|---|
