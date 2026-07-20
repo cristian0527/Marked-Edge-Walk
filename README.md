@@ -12,6 +12,8 @@ In late April 2026, the Supreme Court decided a Louisiana congressional map was 
 
 This repository ananlyzes what redistricting would look like in those eight states Cohn argued in his NYT article through the Marked Edge Walk. The eight states are Alabama, Georgia, Florida, Louisiana, Mississippi, North Carolina, South Carolina, and Tennessee. In our analysis, we find sampling distributions that are similiar to the current enacted congressional plan in each state, and then generate large ensembles of redistricting plans to grasp an understanding of minority representation across plans. We rely on the Marked Edge Walk to carryout our analysis since the algorithm has the outstanding property to sample from a targeted distribution.
 
+For a thorough walk of our analysis, please see the following report of our analysis: __link__
+
 ### Summary of the Marked Edge Walk
 
 The Marked Edge Walk is a Markov Chain Monte Carlo (MCMC) algorithm that is implemented for generating ensembles of redistricting plans by sampling from a tuneable targeted distribution. This algorithm utilizes a spanning tree with marked edges, which moves between districting plans through small adjustments to the tree. In comparison to other redistricting algorithms, such as ReCom, the Marked Edge Walk is capable of calculating transition probabilities, making it more desirable in sampling plans from such targeted distributions.
