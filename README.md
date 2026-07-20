@@ -21,6 +21,20 @@ For a thorough walkthrough on the Marked Edge Walk, please see the following pap
 ## How to MEW (Marked Edge Walk)
 From here on, we will explain how to run the Marked Edge Walk (MEW) to replicate results from our analysis. Or, if you're curious, you may use this guide to play around with the parameters or try the analysis on a new state of your choice.
 
+__The following is the overall workflow of our MEW process__
+
+1. Prepare & Load State Data
+2. Choose Constraints for the Energy Function
+3. Select an Energy Function
+4. Set Beta Values
+5. Test & Calibrate
+6. Add Partisan constraints
+7. Test & Calibrate
+8. Run a Lengthy Ensemble
+
+
+
+
 ### Repository Structure
 
 the following is a quick example (consult with what to add and such...) 
