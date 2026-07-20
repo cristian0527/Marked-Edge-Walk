@@ -57,7 +57,7 @@ Before walking through each step in depth, it is essential to first get familiar
 | `push_reader_claude_w_cuts_{STATE}`| mew |
 | `seed_matcher{STATE}`| mew |
 
-**STATE:** placeholder - explain what this is {STATE}
+**STATE:** placeholder - explain what this is {STATE} ... this is just a placeholder for the specific state abbreviation (or whatever naming standard we will go by) 
 
 
 
