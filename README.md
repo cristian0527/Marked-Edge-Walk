@@ -62,6 +62,17 @@ Before walking through each step in depth, it is essential to first get familiar
 
 
 
+
+
+
+Table of States' Energy Function Approach 
+
+| Energy Function Approach | States |
+|---|---|
+| Exponential / Minimized| Florida, Georgia, North Carolina, South Carolina|
+| Gaussian | Alabama, Louisiana, Mississippi, Tennessee
+
+
 ### Repository Structure
 
 Maybe not important, throwout if not necessary [keep right now though]
