@@ -32,10 +32,10 @@ The following is the overall workflow of our MEW process:
 	* Across our eight states, we either were set on the Gaussian approach or the exponential/minimized approach.
 7. Set Beta & Target Values
 	* Based on the currently enacted plan statistics on compactness and county splits, tune the parameters so we may sample from a target distribution that's similar so we may draw baseline comparisons
-9. Test & Calibrate
+9. Base Test & Calibrate
 	* Tuning the parameters will come with many trials and error, so it is always good to rerun a test run to feel confident that we are sampling from a distribution that is mixing & as close as to the enacted plan.  
 11. Add Partisan constraints
-13. Test & Calibrate
+13. Partisan Test & Calibrate
 	* Once we add partisan, tune the partisanship parameter and run test trials to feel confident that we set appropriate parameters.
 15. Run a Lengthy Ensemble
 	* Once we are set on parameters, prepare to do a long ensemble run that is from the millions and onwards.
@@ -57,7 +57,7 @@ Before walking through each step in depth, it is essential to first get familiar
 | `push_reader_claude_w_cuts_{STATE}`| mew |
 | `seed_matcher{STATE}`| mew |
 
-**STATE:** placeholder - explain what this is 
+**STATE:** placeholder - explain what this is {STATE}
 
 
 
