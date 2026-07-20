@@ -5,3 +5,20 @@ This repository is the keepsake of Professor Daryl DeFord's Undergraduate Resear
 First of all, we would like to thank Atticus McWhorter for joining us in our summer research journey. Atticus, alongside Professor DeFord, guided us in implementing the Marked Edge Walk for our analysis and teaching us how to program in Julia.
 
 For a thorough walkthrough on the Mark Edge Walk, please see the following paper by Professor DeFord and Atticus: https://arxiv.org/abs/2510.17714v2
+
+## How to MEW (Marked Edge Walk)
+
+### Structure of Code-base
+
+the following is an example *set this up later on*
+.
+├── .github
+│   └── workflows
+│       └── main.yml
+├── LICENCE
+├── README.md
+├── action.yml
+├── main.py
+├── tree.bak
+└── tree.sh
+
