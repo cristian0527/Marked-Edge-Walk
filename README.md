@@ -4,13 +4,15 @@ This repository is the keepsake of Professor Daryl DeFord's Undergraduate Resear
 
 First of all, we would like to thank Atticus McWhorter for joining us in our summer research journey. Atticus, alongside Professor DeFord, guided us in implementing the Marked Edge Walk for our analysis and taught us how to program in Julia.
 
+### Overview
+
+[quick overview of what our purpose is with our analysis, why we are studying this, and discuss why we are using MEW.] 
+
 ### Summary of the Marked Edge Walk
 
 The Marked Edge Walk is a Markov Chain Monte Carlo (MCMC) algorithm that is implemented for generating ensembles of redistricting plans by sampling from a tuneable targeted distribution. This algorithm utilizes a spanning tree with marked edges, which moves between districting plans through small adjustments to the tree. In comparison to other redistricting algorithms, such as ReCom, the Marked Edge Walk is capable of calculating transition probabilities, making it more desirable in sampling plans from such targeted distributions.
 
 For a thorough walkthrough on the Mark Edge Walk, please see the following paper by Professor DeFord and Atticus: https://arxiv.org/abs/2510.17714v2
-
-### Overview 
 
 
 ## How to MEW (Marked Edge Walk)
