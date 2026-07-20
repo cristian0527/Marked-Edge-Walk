@@ -40,6 +40,13 @@ The following is the overall workflow of our MEW process:
 15. Run a Lengthy Ensemble
 	* Once we are set on parameters, prepare to do a long ensemble run that is from the millions and onwards.
 
+
+
+**File:** `config.yaml` example? 
+
+
+
+
 ### Repository Structure
 
 Maybe not important, throwout if not necessary [keep right now though]
