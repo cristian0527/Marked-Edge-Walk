@@ -19,20 +19,23 @@ The Marked Edge Walk is a Markov Chain Monte Carlo (MCMC) algorithm that is impl
 For a thorough walkthrough on the Marked Edge Walk, please see the following paper by Professor DeFord and Atticus: https://arxiv.org/abs/2510.17714v2
 
 ## How to MEW (Marked Edge Walk)
+
 From here on, we will explain how to run the Marked Edge Walk (MEW) to replicate results from our analysis. Or, if you're curious, you may use this guide to play around with the parameters or try the analysis on a new state of your choice.
 
-__The following is the overall workflow of our MEW process__
+The following is the overall workflow of our MEW process:
 
 1. Prepare & Load State Data
-2. Choose Constraints for the Energy Function
-3. Select an Energy Function
-4. Set Beta Values
-5. Test & Calibrate
-6. Add Partisan constraints
-7. Test & Calibrate
-8. Run a Lengthy Ensemble
-
-
+	* Load dual graph with demographic & election data, alongside the .shp file and generated .json plans through ReCom.
+3. Choose Constraints for the Energy Function
+	* Decide on what parameters to be taken into account with the energy function. For our analysis, we set on compactness/cut-edges and county splits.
+5. Select an Energy Function
+	* Across our eight states, we either were set on the Gaussian approach or the exponential/minimized approach.
+7. Set Beta & Target Values
+	* Based on the currently enacted plan statistics on compactness and county splits, tune the parameter so we may sample from a target distribution 
+9. Test & Calibrate
+10. Add Partisan constraints
+11. Test & Calibrate
+12. Run a Lengthy Ensemble
 
 
 ### Repository Structure
