@@ -35,9 +35,10 @@ The following is the overall workflow of our MEW process:
 5. Base Test & Calibrate
 	* Tuning the parameters will come with many trials and error, so it is always good to rerun a test run to feel confident that we are sampling from a distribution that is mixing & as close as to the enacted plan.  
 6. Add Partisan constraints
-7. Partisan Test & Calibrate
+	* note....
+8. Partisan Test & Calibrate
 	* Once we add partisan, tune the partisanship parameter and run test trials to feel confident that we set appropriate parameters.
-8. Run a Lengthy Ensemble
+9. Run a Lengthy Ensemble
 	* Once we are set on parameters, prepare to do a long ensemble run that is from the millions and onwards.
 
 ### Repository Files
