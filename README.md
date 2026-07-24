@@ -60,7 +60,10 @@ Before walking through each step in depth, it is essential to first get familiar
 **Note on {STATE}:** {STATE} is a placeholder for a state's abbreviation (e.g. `AL`, `FL`, `GA`). Each state has its own copy of these files following the same naming convention.
 
 
+### In-Depth Step-by-Step Workflow of MEW
 
+1. Prepare & Load State Data 
+	* Before running the Marked Edge Walk, the state's processed precinct data needs to be converted into a graph format Julia can work with. This is done with a small Python preprocessing script using the `networkx` package. We load in a state's processed precincts file (e.g. AL/AL_Processed_Precincts.json) as a `.json` file and rebuild it as a `networkx` graph object. Afterwards, we convert the string-labeled `GEOID` nodes into 0-based integers. Finally, the relabeled graph is exported in a node-link format. The resulting dual graph is what gets loaded into Julia (e.g. in `lct_run_AL` as `AL/AL_processed_precincts_Julia.json`) to build the graph.
 
 
 
