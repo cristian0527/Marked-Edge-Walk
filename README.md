@@ -66,7 +66,7 @@ Before walking through each step in depth, it is essential to first get familiar
 	* Before running the Marked Edge Walk, the state's processed precinct data needs to be converted into a graph format Julia can work with. This is done with a small Python preprocessing script using the `networkx` package. We load in a state's processed precincts file (e.g. AL/AL_Processed_Precincts.json) as a `.json` file and rebuild it as a `networkx` graph object. Afterwards, we convert the string-labeled `GEOID` nodes into integers. Finally, the relabeled graph is exported in a node-link format. The resulting dual graph is what gets loaded into Julia (e.g. in `lct_run_AL` as `AL/AL_processed_precincts_Julia.json`) to use for our MEW ensemble proceedure.
 
 &emsp; *A couple of pitfalls for this process:*
- * If you are working with an updated version of networkx, the following piece of code in, `json_graph.node_link_data(g)`, may not label the `link` data structure in the `.json` as `"link"`
+&emsp; * If you are working with an updated version of networkx, the following piece of code in, `json_graph.node_link_data(g)`, may not label the `link` data structure in the `.json` as `"link"`
 
 
 
