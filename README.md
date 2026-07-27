@@ -82,6 +82,17 @@ Before walking through each step in depth, it is essential to first get familiar
 | Gaussian | Alabama, Louisiana, Mississippi, Tennessee
 
 
+4. Set Beta & Target Values
+&emsp;After you settle on the constraints for the energy function, as well as choosing the kind of energy function (Exponential & Gaussian) for ..., we will set our parameters for our beta and target constraints. For our analysis, since we are using cut-edges as a compactness measure in our energy function, as well as the total number of county splits across a state, that will be the focus of our *How to Mew* repository. For this section on how to use the Marked Edge Walk, there will be many trials and errors, and most likely you will not find the optimal parameters in the first shot. This step goes in hand with step five, so this section is primarily a forewarning of how lengthy this process may be and guide you on how to figure out the initial parameters.
+&emsp;A good start for finding an initial set of parameters for the energy function will be to use each state's geographic measures statistics on the currently enacted districting plan as a starting point; so for our analysis, we will be observing where each state's county splits and cut-edges sit around. These statistics are important for tuning target parameters.
+	
+&emsp;*Acquiring Geographic Statistics:*
+
+* For each state, we acquired our statistics through Professor DeFord's [CISER GerryChain](https://github.com/drdeford/CISER_GerryChain/blob/main/2_Compactness.ipynb) repository. An example script is present in our repository that streamlines this process of acquiring the necessary statistics for our analysis, but for a thorough overview, please refer to the provided repository by Professor DeFord.
+
+
+
+
 ### Repository Structure
 
 Maybe not important, throwout if not necessary [keep right now though]
