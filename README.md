@@ -75,7 +75,7 @@ Before walking through each step in depth, it is essential to first get familiar
 3. Select an Energy Function
 	* (first write a bit of this section and ask for help on what may be improved) 
 
-&ensp; Table of States' Energy Function Approach 
+&ensp;Table of States' Energy Function Approach 
 | Energy Function Approach | States |
 |---|---|
 | Exponential / Minimized| Florida, Georgia, North Carolina, South Carolina|
