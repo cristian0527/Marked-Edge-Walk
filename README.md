@@ -98,6 +98,21 @@ Before walking through each step in depth, it is essential to first get familiar
 
 
 
+### notes
+
+* **for step 4 & 5 (probably step 5) mention the use of starting the MEW from either the currently enacted districting plan or a randomly generated seed from ReCom algorithm**
+
+
+* **low amount of county splits compared to recom in MEW 
+	but for party aware experiment, we turned it off so we would have better mixing.**
+
+* **define what are county splits / cut edges (and why we chose these constraints)**
+
+
+
+
+
+
 ### Repository Structure
 
 Maybe not important, throwout if not necessary [keep right now though]
