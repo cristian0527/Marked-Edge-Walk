@@ -67,7 +67,13 @@ Before walking through each step in depth, it is essential to first get familiar
 
 &emsp; *A couple of pitfalls for this process:*
 * If you are working with an updated version of `networkx`, the following piece of code in the script, `json_graph.node_link_data(g)`, may not label the `links` data type in the `.json` as "`links`." Rather, `edges` will be the name of "`links`" data type key in the dictionary. We handled this by renaming the `edges` key name to be `links` since our code written in Julia used the `links` key name when we loaded in all of the states' data.
-* For Louisiana, technical issues arose in attempting to convert the processed precincts data into the dual graph we want for the Marked Edge Walk in Julia. Since we could not assemble a dual graph for the state, this means we won't have the `links` data structure in our dictionary. To go about this, we used the `adjacency` in our Louisiana processed precincts `.json` file and ... blah blah 
+* For Louisiana, technical issues arose in attempting to convert the processed precincts data into the dual graph we want for the Marked Edge Walk in Julia. Since we could not assemble a dual graph for the state, this means we won't have the `links` data structure in our dictionary. To go about this, we used the `adjacency` in our Louisiana processed precincts `.json` file and ... blah blah
+
+2. Choose Constraints for the Energy Function
+	* Based on the question you are asking, you may want to sit with thinking about which exact parameters you want to embed in your energy function. (we should describe the purpose of what these constraints do in the energy function.)
+
+3. Select an Energy Function
+	* (first write a bit of this section and ask for help on what may be improved) 
 
 
 
