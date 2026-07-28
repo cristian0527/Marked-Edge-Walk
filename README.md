@@ -175,6 +175,8 @@ Exponential:
 Have a clear runnable version so if someone stumbles upon the repo, they just want to :heckit
 
 
+-β<sub>county_splits</sub> • ((county_splits<sub>new</sub> - county_splits<sub>old</sub>)<sup>2</sup> - β<sub>cuts</sub> • ((cuts_edges<sub>new</sub> - cuts_edges<sub>old</sub>)<sup>2</sup> 
+
 
 &emsp;Table of States' Energy Function Approach 
 | Energy Function Approach | States |
