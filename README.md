@@ -92,9 +92,9 @@ Across our eight states, we used two approaches for how we structure the energy 
 
 * Gaussian: In the Gaussian approach, each constraint is scored based on its square distance from a target value. 
 
-`-β county_splits * ((cnty_splits_new - cty_target)^2 - (cnty_splits_old - cty_target)^2) - β_cuts * ((cuts_new - target_cuts)^2 - (cuts_old - target_cuts)^2)`
+&emsp;`-β county_splits * ((cnty_splits_new - cty_target)^2 - (cnty_splits_old - cty_target)^2) - β_cuts * ((cuts_new - target_cuts)^2 - (cuts_old - target_cuts)^2)`
 
-Inside each energy function, we are able to control how strongly each constraint is (weighted?) in the energy function. This allows us to communicate with the Marked Edge Walk on how much to care about a given constraint relative to the others. 
+&emsp;Inside each energy function, we are able to control how strongly each constraint is (weighted?) in the energy function. This allows us to communicate with the Marked Edge Walk on how much to care about a given constraint relative to the others. 
 	
 &emsp;Scaling Betas
 * Lowering a beta loosens the constraints' influence, allowing the chain more freedom to drift from the target value in favor of exploring other parts of the state space or satisfying other constraints. On the other hand, toggling the beta towards a higher value makes the constraint play a more important part to the energy function. This means that during the walk, the plans that keep that constraint close to its target are favored. Understanding the power(?) scaling(?) Betas are crucial when it comes to tuning our parameters (see Step 4 & Step 5).
