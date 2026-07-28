@@ -92,7 +92,7 @@ Across our eight states, we used two approaches for how we structure the energy 
 
 * Gaussian: In the Gaussian approach, each constraint is scored based on its square distance from a target value. 
 
-&emsp;`-β<sub>county_splits</sub> • ((county_splits<sub>new</sub> - target_county)<sup>2</sup> - (county_splits<sub>old</sub> - target_county)<sup>2</sup>) - β<sub>cuts</sub> • ((cuts_edges<sub>new</sub> - target_cuts)<sup>2</sup> - (cuts_edges<sub>old</sub> - target_cuts)<sup>2</sup>)`
+`-β<sub>county_splits</sub> • ((county_splits<sub>new</sub> - target_county)<sup>2</sup> - (county_splits<sub>old</sub> - target_county)<sup>2</sup>) - β<sub>cuts</sub> • ((cuts_edges<sub>new</sub> - target_cuts)<sup>2</sup> - (cuts_edges<sub>old</sub> - target_cuts)<sup>2</sup>)`
 
 &emsp;Inside each energy function, we are able to control how strongly each constraint is (weighted?) in the energy function. This allows us to communicate with the Marked Edge Walk on how much to care about a given constraint relative to the others. 
 	
