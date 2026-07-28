@@ -102,7 +102,7 @@ Before walking through each step in depth, it is essential to first get familiar
 
 Now that we ran our first short walk ensemble with these intial parameters for our betas and target values, we will discuss about the process to finding parameters that will be optimal for each state. This portion of the journey will be a bit lackluster due to the fact many Marked Edge Walk ensembles will have to be executed before finally finding ideal parameters. Do not worry though as we will describe in this paper in our best abilities how to proceeed (redundant get to the point; just for my writing sake). Visualization plots will come into play. We must construct trace plots of our county splits and cut-edges values throughout the ensemble. Ideally, for our trace plots for both of our parameters, they should be tracing(?) converging(?) towards the enacted map geographic statistics. If on the first shot it appears that the statistics are converging, congratulations! That's fantastic. Now we must...
 
-
+Continued on google, will report back to here
 
 Issues with this:
 population balance, where the MEW starts from, whether it looks like the trace plots for Democratic % are really moving. 
