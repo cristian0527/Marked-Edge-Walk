@@ -148,8 +148,7 @@ Maybe not important, throwout if not necessary [keep right now though]
 ```
 
 Work(?):
--β<sub>county_splits</sub> * ((cnty_splits<sub>new</sub> - cty_target)<sup>2</sup> - (cnty_splits<sub>old</sub> - cty_target)<sup>2</sup>)  
-- β<sub>cuts</sub> * ((cuts<sub>new</sub> - target_cuts)<sup>2</sup> - (cuts<sub>old</sub> - target_cuts)<sup>2</sup>)
+-β<sub>county_splits</sub> * ((cnty_splits<sub>new</sub> - cty_target)<sup>2</sup> - (cnty_splits<sub>old</sub> - cty_target)<sup>2</sup>) - β<sub>cuts</sub> * ((cuts<sub>new</sub> - target_cuts)<sup>2</sup> - (cuts<sub>old</sub> - target_cuts)<sup>2</sup>)
 
 
 
