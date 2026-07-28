@@ -88,11 +88,12 @@ Across our eight states, we used two approaches for how we structure the energy 
 | Exponential / Minimized| Florida, Georgia, North Carolina, South Carolina|
 | Gaussian | Alabama, Louisiana, Mississippi, Tennessee
 
-* Exponential/Minimized: 
+* Exponential/Minimized: -β<sub>county_splits</sub> • (county_splits<sub>new</sub> - county_splits<sub>old</sub>) - β<sub>cuts</sub> • (cuts_edges<sub>new</sub> - cuts_edges<sub>old</sub>)
 
-* Gaussian: In the Gaussian approach, each constraint is scored based on its square distance from a target value. 
+* Gaussian: -β<sub>county_splits</sub> • ((county_splits<sub>new</sub> - target_county)<sup>2</sup> - (county_splits<sub>old</sub> - target_county)<sup>2</sup>) - β<sub>cuts</sub> • ((cuts_edges<sub>new</sub> - target_cuts)<sup>2</sup> - (cuts_edges<sub>old</sub> - target_cuts)<sup>2</sup>)
 
--β<sub>county_splits</sub> • ((county_splits<sub>new</sub> - target_county)<sup>2</sup> - (county_splits<sub>old</sub> - target_county)<sup>2</sup>) - β<sub>cuts</sub> • ((cuts_edges<sub>new</sub> - target_cuts)<sup>2</sup> - (cuts_edges<sub>old</sub> - target_cuts)<sup>2</sup>)
+&emsp;In the Gaussian approach, each constraint is scored based on its square distance from a target value. 
+
 
 &emsp;Inside each energy function, we are able to control how strongly each constraint is (weighted?) in the energy function. This allows us to communicate with the Marked Edge Walk on how much to care about a given constraint relative to the others. 
 	
