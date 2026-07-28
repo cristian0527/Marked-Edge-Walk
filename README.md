@@ -76,11 +76,28 @@ Before walking through each step in depth, it is essential to first get familiar
 3. Select an Energy Function
 	* (first write a bit of this section and ask for help on what may be improved) 
 
+**ROUGH DRAFT**
+
+&emsp;Once a set of constraints were chosen for approaching our analysis, step two, the next step is deciding how those constraints get integrated into the Marked Edge Walk as a guide to sample from plans we care about. This leads us into discussing the importance of the energy function’s role in the Marked Edge Walk. In essence, the energy function samples from a distribution to grab a districting plan and returns a score that represents how good the plan is relative to the constraints we care about. At each step, the Marked Edge Walk proposes a tiny change to the current plan (enacted / random seed from the init), and the energy function compares the score of the new plan against the old one to decide on how likely that change is to be accepted. The energy function is essentially the powerhouse of the Marked Edge Walk. 
+
+Across our eight states, we used two approaches for how we structure the energy function, which are the Exponential/Minimized approach and a Gaussian approach.   
+
 &emsp;Table of States' Energy Function Approach 
 | Energy Function Approach | States |
 |---|---|
 | Exponential / Minimized| Florida, Georgia, North Carolina, South Carolina|
 | Gaussian | Alabama, Louisiana, Mississippi, Tennessee
+
+* Exponential/Minimized: 
+
+* Gaussian: In the Gaussian approach, each constraint is scored based on its square distance from a target value. 
+
+`-β county_splits * ((cnty_splits_new - cty_target)^2 - (cnty_splits_old - cty_target)^2) - β_cuts * ((cuts_new - target_cuts)^2 - (cuts_old - target_cuts)^2)`
+
+Inside each energy function, we are able to control how strongly each constraint is (weighted?) in the energy function. This allows us to communicate with the Marked Edge Walk on how much to care about a given constraint relative to the others. 
+	
+&emsp;Scaling Betas
+* Lowering a beta loosens the constraints' influence, allowing the chain more freedom to drift from the target value in favor of exploring other parts of the state space or satisfying other constraints. On the other hand, toggling the beta towards a higher value makes the constraint play a more important part to the energy function. This means that during the walk, the plans that keep that constraint close to its target are favored. Understanding the power(?) scaling(?) Betas are crucial when it comes to tuning our parameters (see Step 4 & Step 5).
 
 
 4. Set Beta & Target Values
@@ -156,6 +173,15 @@ Gaussian
 Exponential: 
 
 Have a clear runnable version so if someone stumbles upon the repo, they just want to :heckit
+
+
+
+&emsp;Table of States' Energy Function Approach 
+| Energy Function Approach | States |
+|---|---|
+| Exponential / Minimized| Florida, Georgia, North Carolina, South Carolina|
+| Gaussian | Alabama, Louisiana, Mississippi, Tennessee
+
 
 
 
