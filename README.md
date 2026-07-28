@@ -105,7 +105,7 @@ Across our eight states, we used two approaches for how we structure the energy 
 
 &emsp;After you settle on the constraints for the energy function, as well as choosing the kind of energy function (Exponential & Gaussian) for ..., we will set our parameters for our beta and target constraints. For our analysis, since we are using cut-edges as a compactness measure in our energy function, as well as the total number of county splits across a state, that will be the focus of our *How to Mew* repository. For this section on how to use the Marked Edge Walk, there will be many trials and errors, and most likely you will not find the optimal parameters in the first shot. This step goes in hand with step five, so this section is primarily a forewarning of how lengthy this process may be and guide you on how to figure out the initial parameters.
 
-&emsp;A good start for finding an initial set of parameters for the energy function will be to use each state's geographic measures statistics on the currently enacted districting plan as a starting point; so for our analysis, we will be observing where each state's county splits and cut-edges sit around. These statistics are important for tuning the target parameters, so to go about with county splits and cut-edges, set the target parameters for county splits at the enacted statistic and for cut-edges approximately about where the enacted plan lies at. For convention, we set the beta parameters to be at 0.2 for county splits and 0.010 for cut edges. The number of steps to have the Marked Edge Walk to do, to get a rough idea of how optimal our parameters are for our analysis, a 100,000 through 500,000 step walk will be sufficient.
+&emsp;A good start for finding an initial set of parameters for the energy function will be to use each state's geographic measures and compactness statistics on the currently enacted districting plan as a starting point; so for our analysis, we will be observing where each state's county splits and cut-edges sit around. These statistics are important for tuning the target parameters, so to go about with county splits and cut-edges, set the target parameters for county splits at the enacted statistic and for cut-edges approximately about where the enacted plan lies at. For convention, we set the beta parameters to be at 0.2 for county splits and 0.010 for cut edges. The number of steps to have the Marked Edge Walk to do, to get a rough idea of how optimal our parameters are for our analysis, a 100,000 through 500,000 step walk will be sufficient.
 
 &emsp;Since in this section we introduced on how to get started with finding these parameters, the following section will continue with this section, elaborating what's the next step after doing an initial run on test parameters and how to identify if the parameters are valid, or how to approach towards optimal parameters. 
 	
@@ -171,12 +171,10 @@ Gaussian
 
 -β<sub>county_splits</sub> • ((county_splits<sub>new</sub> - target_county)<sup>2</sup> - (county_splits<sub>old</sub> - target_county)<sup>2</sup>) - β<sub>cuts</sub> • ((cuts_edges<sub>new</sub> - target_cuts)<sup>2</sup> - (cuts_edges<sub>old</sub> - target_cuts)<sup>2</sup>)
 
-Exponential: 
+Exponential: -β<sub>county_splits</sub> • (county_splits<sub>new</sub> - county_splits<sub>old</sub>) - β<sub>cuts</sub> • (cuts_edges<sub>new</sub> - cuts_edges<sub>old</sub>)
 
 Have a clear runnable version so if someone stumbles upon the repo, they just want to :heckit
 
-
--β<sub>county_splits</sub> • (county_splits<sub>new</sub> - county_splits<sub>old</sub>) - β<sub>cuts</sub> • (cuts_edges<sub>new</sub> - cuts_edges<sub>old</sub>)
 
 
 &emsp;Table of States' Energy Function Approach 
