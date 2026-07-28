@@ -155,6 +155,7 @@ Gaussian
 
 Exponential: 
 
+Have a clear runnable version so if someone stumbles upon the repo, they just want to :heckit
 
 
 
