@@ -147,9 +147,13 @@ Maybe not important, throwout if not necessary [keep right now though]
     └── beano2.2_WI.jl
 ```
 
-Work(?):
--β<sub>county_splits</sub> * ((cnty_splits<sub>new</sub> - cty_target)<sup>2</sup> - (cnty_splits<sub>old</sub> - cty_target)<sup>2</sup>) - β<sub>cuts</sub> * ((cuts<sub>new</sub> - target_cuts)<sup>2</sup> - (cuts<sub>old</sub> - target_cuts)<sup>2</sup>)
+Equations
 
+Gaussian
+
+-β<sub>county_splits</sub> * ((county_splits<sub>new</sub> - target_county)<sup>2</sup> - (county_splits<sub>old</sub> - target_county)<sup>2</sup>) - β<sub>cuts</sub> * ((cuts_edges<sub>new</sub> - target_cuts)<sup>2</sup> - (cuts_edges<sub>old</sub> - target_cuts)<sup>2</sup>)
+
+Exponential: 
 
 
 
