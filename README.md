@@ -62,7 +62,7 @@ Before walking through each step in depth, it is essential to first get familiar
 
 ### In-Depth Step-by-Step Workflow of MEW
 
-1. Prepare & Load State Data
+##### 1. Prepare & Load State Data
 
 &emsp;Before running the Marked Edge Walk, the state's processed precinct data needs to be converted into a graph format Julia can work with. This is done with a small Python preprocessing script using the `networkx` package. We load in a state's processed precincts file (e.g., AL/AL_Processed_Precincts.json) as a `.json` file and rebuild it as a `networkx` graph object. Afterwards, we convert the string-labeled `GEOID` nodes into integers. Finally, the relabeled graph is exported in a node-link format. The resulting dual graph is what gets loaded into Julia (e.g. in `lct_run_AL` as `AL/AL_processed_precincts_Julia.json`) to use for our MEW ensemble proceedure.
 
@@ -70,10 +70,10 @@ Before walking through each step in depth, it is essential to first get familiar
 * If you are working with an updated version of `networkx`, the following piece of code in the script, `json_graph.node_link_data(g)`, may not label the `links` data type in the `.json` as "`links`." Rather, `edges` will be the key name of the "`links`" list in the dictionary. We handled this by renaming the `edges` key name to be `links` since our written Julia code used the `links` key name when we loaded in all of the states' data.
 * For Louisiana, technical issues arose in attempting to convert the processed precinct data into the dual graph we want for the Marked Edge Walk in Julia. Since we could not assemble a dual graph for the state, this means we won't have the `links` data structure in our dictionary. To work about this, we loaded Louisiana’s processed precincts `.json` in and built the graph from its `adjacency` list in the file. Since each node’s `adjacency` list stores the information of the neighboring node IDS, we iterate through every node, and for each neighbor listed in `adjacency`, we add an edge to the graph and store that edge’s shared perimeter, `share_perim`,  in a `perim_dict`. This allows us to obtain the same dual graph that the python script `json_graph.node_link_data(g)` would have given us. 
 
-2. Choose Constraints for the Energy Function
+##### 2. Choose Constraints for the Energy Function
 	* Based on the question you are asking, you may want to sit with thinking about which exact parameters you want to embed in your energy function. (we should describe the purpose of what these constraints do in the energy function.)
 
-3. Select an Energy Function
+##### 3. Select an Energy Function
 
 &emsp;Once a set of constraints were chosen for approaching our analysis, step two, the next step is deciding how those constraints get integrated into the Marked Edge Walk as a guide to sample from plans we care about. This leads us into discussing the importance of the energy function’s role in the Marked Edge Walk. In essence, the energy function samples from a distribution to grab a districting plan and returns a score that represents how good the plan is relative to the constraints we care about. At each step, the Marked Edge Walk proposes a tiny change to the current plan (enacted / random seed from the init), and the energy function compares the score of the new plan against the old one to decide on how likely that change is to be accepted. The energy function is essentially the powerhouse of the Marked Edge Walk. 
 
@@ -100,7 +100,7 @@ Across our eight states, we used two approaches for how we structure the energy 
 * Lowering a beta loosens the constraints' influence, allowing the chain more freedom to drift from the target value in favor of exploring other parts of the state space or satisfying other constraints. On the other hand, toggling the beta towards a higher value makes the constraint play a more important part to the energy function. This means that during the walk, the plans that keep that constraint close to its target are favored. Understanding the power(?) scaling(?) Betas are crucial when it comes to tuning our parameters (see Step 4 & Step 5).
 
 
-4. Set Beta & Target Values
+##### 4. Set Beta & Target Values
 
 &emsp;After you settle on the constraints for the energy function, as well as choosing the kind of energy function (Exponential & Gaussian) for ..., we will set our parameters for our beta and target constraints. For our analysis, since we are using cut-edges as a compactness measure in our energy function, as well as the total number of county splits across a state, that will be the focus of our *How to Mew* repository. For this section on how to use the Marked Edge Walk, there will be many trials and errors, and most likely you will not find the optimal parameters in the first shot. This step goes in hand with step five, so this section is primarily a forewarning of how lengthy this process may be and guide you on how to figure out the initial parameters.
 
@@ -113,7 +113,7 @@ Across our eight states, we used two approaches for how we structure the energy 
 * For each state, we acquired our statistics through Professor DeFord's [CISER GerryChain](https://github.com/drdeford/CISER_GerryChain/blob/main/2_Compactness.ipynb) repository. An example script is present in our repository that streamlines this process of acquiring the necessary statistics for our analysis, but for a thorough overview, please refer to the provided repository by Professor DeFord.
 
 
-5. Base Test & Calibrate
+##### 5. Base Test & Calibrate
 
 &emsp; Having run our first short MEW ensemble with an initial set of betas and target values, we now turn to a process of iteratively fine-tuning to find a set of parameters that work for each state. As mentioned, this step will be an iterative process of back and forth that consists of running an ensemble, looking at the outcomes, adjusting parameters, and running this back up. Before walking through this process, if you had not read step (2?), please go back to read it as this section gives an explanation of how these beta and target values come into play in our energy function and what they are doing. Or for a refresher, feel free to review the concept. 
 
