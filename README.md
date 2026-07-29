@@ -115,11 +115,36 @@ Across our eight states, we used two approaches for how we structure the energy 
 
 5. Base Test & Calibrate
 
-&emsp;(Very rough rough draft) Now that we ran our first short walk ensemble with these intial parameters for our betas and target values, we will discuss about the process to finding parameters that will be optimal for each state. This will be a burdensome stress, since not only do we need to grasp an understanding of how our beta values function in relation to one another, but we also have to come to understand some other underlaying factors, such as the epsilon (population balance) for the state and where the Marked Edge Walk starts exploring from. (note, not really burdensome, but just a bit fustrating understanding what went exactly is not going smoothly) (needs to be better written lol but just write : note to self). 
+&emsp; Having run our first short MEW ensemble with an initial set of betas and target values, we now turn to a process of iteratively fine-tuning to find a set of parameters that work for each state. As mentioned, this step will be an iterative process of back and forth that consists of running an ensemble, looking at the outcomes, adjusting parameters, and running this back up. Before walking through this process, if you had not read step (2?), please go back to read it as this section gives an explanation of how these beta and target values come into play in our energy function and what they are doing. Or for a refresher, feel free to review the concept. 
 
-Now that we ran our first short walk ensemble with these intial parameters for our betas and target values, we will discuss about the process to finding parameters that will be optimal for each state. This portion of the journey will be a bit lackluster due to the fact many Marked Edge Walk ensembles will have to be executed before finally finding ideal parameters. Do not worry though as we will describe in this paper in our best abilities how to proceeed (redundant get to the point; just for my writing sake). Visualization plots will come into play. We must construct trace plots of our county splits and cut-edges values throughout the ensemble. Ideally, for our trace plots for both of our parameters, they should be tracing(?) converging(?) towards the enacted map geographic statistics. If on the first shot it appears that the statistics are converging, congratulations! That's fantastic. Now we must...
 
-Continued on google, will report back to here
+&emsp;The diagnostic we use to figure out how our parameters are doing through the walk are trace plots and box plots. First of all, a trace plot plots a statistic’s value at every step across the ensemble. We build trace plots for county splits, cut edges, as well as democratic percentage and black percentage across the districts of a state. For our parameters' trace plots, ideally both should appear to converge toward the enacted plan’s statistics as the walk progresses through the steps. If there appears to be convergence through our trace plots, that’s a strong indicator that the initial parameters are close to right or right on the dot. 
+
+&emsp;The next step is to check the trace plots of each district’s Democratic vote percentage. By looking at this plot, we’re looking if there appears to be movement happening throughout the steps. If it appears that each district’s line is wandering through the space, and is not sitting flat, this tells us that the chain is not stuck and there’s movement going on. Overall, if both, each of the statistics’ trace plots and the Democratic vote percentage, this is a green flag that our parameters are reasonable for the Marked Edge walk and it’s good to go onto the next step of our How To Mew guidelines. However, we found that this is a lengthy process. 
+
+&emsp;From this moment on, we will describe a set of patterns we ran into while fine tuning our parameters for each state, along with how we responded to these barriers. 
+
+&emsp;County Splits
+
+We consistently saw that our county split trace plots overshot the target and was settling above where we wanted them to land. For instance, the following image is an example of tuning our initial parameters on Tennessee. 
+
+![Tennessee Initial Short Ensemble]('images/tennessee_initial_mew.png')
+
+&emsp;Although we set our parameters, beta county split at 0.2 and target county splits at 10, we saw that in this first 10,000 step look at our 100,000 step walk, the Marked Edge Walk was favoring districting plans with higher county splits than what we desired. Our approach when this happened was keeping the target while increasing the beta for county splits. We would run another short walk with this updated beta county splits parameter and do this iteratively until we saw the ensemble converging near where we wanted. The following is an example of this iterative process in Tennessee with a beta county split at 3. 
+
+![Tennessee County Splits Tuning Process Example]('images/image (13).png')
+
+&emsp;As we see through this example run of adjusting the beta county splits parameter at 3, we had to do consistent adjustments between 0.02 to 2, before we decided to run a run with this beta parameter at 3. We finally see that the Marked Edge Walk is walking around districting plans that are closer to the target value, though this beta parameter still needs to be tuned to a higher value to get closer to the enacted plan’s county split value. To continue with our Tennessee example, we decided to set our beta value at 5. With this, we decided that this was our ideal beta county splits parameter since the Marked Edge Walk was able to go over districting plans that was very close to this target value of 10. However, for our finalized county splits parameters, we dropped the target value from 10 to 9 since the Marked Edge Walk was hovering around [10, 11]. After running the Marked Edge Walk with the target county splits value at 9 and a beta value of 5, we were satisfied with how the Marked Edge Walk was generating districting plans with county splits values at either 9 or 10. After feeling satisfied with our county splits parameters, alongside feeling satisfied with our cut edges parameters as well, we ran a 4 million MEW step. 
+
+![Tennessee 4 million Marked Edge Walk with satisfied County Splits parameters]('images/image (17).png')
+
+&emsp;With our final Tennessee run, we noticed that the Marked Edge Walk sampled from districting plans between a value 9 and or 10 for county splits, a couple of times drawing a plan with a value of 8 county splits. Though, we are happy with our county split parameters and finalized these to go onto the next step. 
+
+&emsp;The moral of the story of walking through this example in Tennessee is to describe the goal of tuning the beta parameters. The goal is to raise the beta parameter to find a value strong enough to have convergence, though without over-constraining the walk too much. We want to settle near the target value while ensuring the Marked Edge Walk has enough freedom to move around the state space to draw unique plans. 
+
+
+&emsp;Cut-Edges
+
 
 Issues with this:
 population balance, where the MEW starts from, whether it looks like the trace plots for Democratic % are really moving. 
