@@ -74,9 +74,6 @@ Before walking through each step in depth, it is essential to first get familiar
 	* Based on the question you are asking, you may want to sit with thinking about which exact parameters you want to embed in your energy function. (we should describe the purpose of what these constraints do in the energy function.)
 
 3. Select an Energy Function
-	* (first write a bit of this section and ask for help on what may be improved) 
-
-**ROUGH DRAFT**
 
 &emsp;Once a set of constraints were chosen for approaching our analysis, step two, the next step is deciding how those constraints get integrated into the Marked Edge Walk as a guide to sample from plans we care about. This leads us into discussing the importance of the energy function’s role in the Marked Edge Walk. In essence, the energy function samples from a distribution to grab a districting plan and returns a score that represents how good the plan is relative to the constraints we care about. At each step, the Marked Edge Walk proposes a tiny change to the current plan (enacted / random seed from the init), and the energy function compares the score of the new plan against the old one to decide on how likely that change is to be accepted. The energy function is essentially the powerhouse of the Marked Edge Walk. 
 
@@ -89,6 +86,9 @@ Across our eight states, we used two approaches for how we structure the energy 
 | Gaussian | Alabama, Louisiana, Mississippi, Tennessee
 
 * Exponential/Minimized: -β<sub>county_splits</sub> • (county_splits<sub>new</sub> - county_splits<sub>old</sub>) - β<sub>cuts</sub> • (cuts_edges<sub>new</sub> - cuts_edges<sub>old</sub>)
+
+&emsp;Through the exponential/minimized approach, the cut-edge and county split terms of the energy function were driven by their beta weights, with no target value built into the function. Through this distribution, the betas were simultaneously deciding how strongly we care about a constraint and as well as where the walk should settle, since the presence of a target value to aim for is absent. In practice, this meant tuning for an ideal beta iteratively, more than the gaussian approach. As well, through our experiments, we discovered that the walk would drift towards a value that was not what we desired, as well as there being mixing present.  Ultimately, since we couldn’t reliably tune the parameters so that the walk approaches near a target value we have in mind, this limitation motivated us to use the Gaussian approach across our eight states 
+
 
 * Gaussian: -β<sub>county_splits</sub> • ((county_splits<sub>new</sub> - target_county)<sup>2</sup> - (county_splits<sub>old</sub> - target_county)<sup>2</sup>) - β<sub>cuts</sub> • ((cuts_edges<sub>new</sub> - target_cuts)<sup>2</sup> - (cuts_edges<sub>old</sub> - target_cuts)<sup>2</sup>)
 
