@@ -128,7 +128,7 @@ Across our eight states, we used two approaches for how we structure the energy 
 
 We consistently saw that our county split trace plots overshot the target and was settling above where we wanted them to land. For instance, the following image is an example of tuning our initial parameters on Tennessee. 
 
-![TN???? work](images/tennessee_initial_mew.png)
+![](images/tennessee_initial_mew.png)
 
 &emsp;Although we set our parameters, beta county split at 0.2 and target county splits at 10, we saw that in this first 10,000 step look at our 100,000 step walk, the Marked Edge Walk was favoring districting plans with higher county splits than what we desired. Our approach when this happened was keeping the target while increasing the beta for county splits. We would run another short walk with this updated beta county splits parameter and do this iteratively until we saw the ensemble converging near where we wanted. The following is an example of this iterative process in Tennessee with a beta county split at 3. 
 
@@ -136,7 +136,7 @@ We consistently saw that our county split trace plots overshot the target and wa
 
 &emsp;As we see through this example run of adjusting the beta county splits parameter at 3, we had to do consistent adjustments between 0.02 to 2, before we decided to run a run with this beta parameter at 3. We finally see that the Marked Edge Walk is walking around districting plans that are closer to the target value, though this beta parameter still needs to be tuned to a higher value to get closer to the enacted plan’s county split value. To continue with our Tennessee example, we decided to set our beta value at 5. With this, we decided that this was our ideal beta county splits parameter since the Marked Edge Walk was able to go over districting plans that was very close to this target value of 10. However, for our finalized county splits parameters, we dropped the target value from 10 to 9 since the Marked Edge Walk was hovering around [10, 11]. After running the Marked Edge Walk with the target county splits value at 9 and a beta value of 5, we were satisfied with how the Marked Edge Walk was generating districting plans with county splits values at either 9 or 10. After feeling satisfied with our county splits parameters, alongside feeling satisfied with our cut edges parameters as well, we ran a 4 million MEW step. 
 
-![]('images/image (17).png')
+![](images/tennessee_county_splits_final.png)
 
 &emsp;With our final Tennessee run, we noticed that the Marked Edge Walk sampled from districting plans between a value 9 and or 10 for county splits, a couple of times drawing a plan with a value of 8 county splits. Though, we are happy with our county split parameters and finalized these to go onto the next step. 
 
