@@ -124,9 +124,9 @@ Across our eight states, we used two approaches for how we structure the energy 
 
 &emsp;From this moment on, we will describe a set of patterns we ran into while fine tuning our parameters for each state, along with how we responded to these barriers. 
 
-&emsp;County Splits
+&emsp;*County Splits*
 
-We consistently saw that our county split trace plots overshot the target and was settling above where we wanted them to land. For instance, the following image is an example of tuning our initial parameters on Tennessee. 
+&emsp;We consistently saw that our county split trace plots overshot the target and was settling above where we wanted them to land. For instance, the following image is an example of tuning our initial parameters on Tennessee. 
 
 ![](images/tennessee_initial_mew.png)
 
