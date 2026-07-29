@@ -128,7 +128,7 @@ Across our eight states, we used two approaches for how we structure the energy 
 
 We consistently saw that our county split trace plots overshot the target and was settling above where we wanted them to land. For instance, the following image is an example of tuning our initial parameters on Tennessee. 
 
-![]('images/tennessee_initial_mew.png')
+![TN???? work]('images/tennessee_initial_mew.png')
 
 &emsp;Although we set our parameters, beta county split at 0.2 and target county splits at 10, we saw that in this first 10,000 step look at our 100,000 step walk, the Marked Edge Walk was favoring districting plans with higher county splits than what we desired. Our approach when this happened was keeping the target while increasing the beta for county splits. We would run another short walk with this updated beta county splits parameter and do this iteratively until we saw the ensemble converging near where we wanted. The following is an example of this iterative process in Tennessee with a beta county split at 3. 
 
