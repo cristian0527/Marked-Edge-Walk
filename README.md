@@ -19,12 +19,10 @@ For a thorough walkthrough of our analysis, please see the following report: [Th
 The Marked Edge Walk is a Markov Chain Monte Carlo (MCMC) algorithm that is implemented for generating ensembles of redistricting plans by sampling from a tuneable targeted distribution. This algorithm utilizes a spanning tree with marked edges, which moves between districting plans through small adjustments to the tree. In comparison to other redistricting algorithms, such as ReCom, the Marked Edge Walk is capable of calculating transition probabilities, making it more desirable in sampling plans from such targeted distributions.
 
 
-<img width="1916" height="1237" alt="ezgif com-optimize (1)" src="https://github.com/user-attachments/assets/8f027a49-58f8-439f-a8aa-54ebb67e15a8" />
-
-
 <div align="center">
   <img width="1916" height="1237" alt="ezgif com-optimize (1)" src="https://github.com/user-attachments/assets/8f027a49-58f8-439f-a8aa-54ebb67e15a8" /><br>
-  <sub>Your Caption Text Here</sub>
+  <sub>Marked Edge Walk on Georgia</sub>
+  <sub></sub>
 </div>
 
 
