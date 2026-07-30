@@ -238,7 +238,9 @@ Have a clear runnable version so if someone stumbles upon the repo, they just wa
 -β<sub>county_splits</sub> • ((county_splits<sub>new</sub> - target_county)<sup>2</sup> - (county_splits<sub>old</sub> - target_county)<sup>2</sup>) - β<sub>cuts</sub> • ((cuts_edges<sub>new</sub> - target_cuts)<sup>2</sup> - (cuts_edges<sub>old</sub> - target_cuts)<sup>2</sup>)
 
 
-![](images/![](images/energyfunctionbase.png))
+![](images/![](images/energyfunctionbase.png)
+
+does this work now
 
 does this look good? 
 
