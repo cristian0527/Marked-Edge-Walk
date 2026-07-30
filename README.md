@@ -151,12 +151,18 @@ Across our eight states, we used two approaches for how we structure the energy 
 &emsp;The moral of the story of walking through this example in Tennessee is to describe the goal of tuning the beta parameters. The goal is to raise the beta parameter to find a value strong enough to have convergence, though without over-constraining the walk too much. We want to settle near the target value while ensuring the Marked Edge Walk has enough freedom to move around the state space to draw unique plans. 
 
 
-&emsp;Cut-Edges
+&emsp;*Cut-Edges*
 
+&emsp;For cut edges, ideally we would like to keep the beta value low, and only nudge it up in small increments if needed be. For our process, we typically moved the beta cut edges value from 0.01 to 0.015. As with county splits, we would watch where the trace plots were heading and adjust the target accordingly to bring it towards the enacted plan’s cut-edges value. [This will be short, just say more about not bringing the beta value too high. We should stay roughly about 0.01 to 0.02 also why]. The fundamental principle is the same for both measures of not over constraining the energy function so that we find districting plans that have similar statistics to that of the enacted plan of a state, as well as their being movement present in the Marked Edge Walk.  
 
-Issues with this:
-population balance, where the MEW starts from, whether it looks like the trace plots for Democratic % are really moving. 
-# mention the 
+&emsp;*Important Notes*
+
+* Population Tolerance (ε): 
+&emsp;For each of the state’s `lct_run_{STATE}` file, the state’s file sets a population balance tolerance, epsilon. Epsilon accounts for how deviated any district’s population may be from ideal. Originally, we set this epsilon to 1% across all eight states, though found it to be too constraining; particularly, some of our seed plans were population imbalance, so initiating a walk from one of those seeds under a strict 1% tolerance caused trouble. This is because the Marked Edge walk accepts a transition if the resulting plan’s district populations fall within epsilon of ideal, so if a seed is far from the strict tolerance epsilon, it does not have much freedom to walk around the space of districting plans, especially such plans that are close to the enacted plan. In our runs, the walk was stuck when we ran ensembles. So, we loosened this to 2% for most states, with Tennessee and Florida as the exception, where we set the epsilon to 5%. For Tennessee, the problem was that the ReCom generated districting map was population imbalance, so upping the epsilon value was needed for movement. For Florida… 
+
+* Marked Edge Walk Ensemble Starting Point
+&emsp; Additionally, it’s worth noting the starting points for the Marked Edge Walk, whether that’s the enacted map or a randomly generated plan made with ReCom. Starting from a randomly generated plan allows us to understand whether a walk is mixing well when it is not starting from the enacted plan, where we would like the resulting plans to resemble the enacted plan. 
+
 
 
 
