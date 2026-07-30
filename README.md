@@ -12,7 +12,6 @@ This repository analyzes what redistricting would look like in those eight state
 
 ![](images/1.png)
 
-
 For a thorough walkthrough of our analysis, please see the following report: [The Impact of the VRA on Minority Representation: What “Race-Blind” Redistricting Looks Like in Southern States](https://docs.google.com/document/d/1MZHpPIdR5elz5MzpLTaWqnESlYOkuR72L6Cy55GbeS4/edit?usp=sharing)
 
 ### Summary of the Marked Edge Walk
@@ -21,6 +20,15 @@ The Marked Edge Walk is a Markov Chain Monte Carlo (MCMC) algorithm that is impl
 
 
 <img width="1916" height="1237" alt="ezgif com-optimize (1)" src="https://github.com/user-attachments/assets/8f027a49-58f8-439f-a8aa-54ebb67e15a8" />
+
+
+<div align="center">
+  <img width="1916" height="1237" alt="ezgif com-optimize (1)" src="https://github.com/user-attachments/assets/8f027a49-58f8-439f-a8aa-54ebb67e15a8" /><br>
+  <sub>Your Caption Text Here</sub>
+</div>
+
+
+
 
 For a thorough walkthrough on the Marked Edge Walk, please see the following paper by Atticus and Professor DeFord: https://arxiv.org/abs/2510.17714v2
 
