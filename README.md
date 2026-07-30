@@ -199,7 +199,6 @@ Maybe not important, throwout if not necessary [keep right now though]
 
 Equations
 
-$$-\beta_{\text{county\_splits}} \cdot \left((\text{county\_splits}_{\text{new}} - \text{target\_county})^2 - (\text{county\_splits}_{\text{old}} - \text{target\_county})^2\right) - \beta_{\text{cuts}} \cdot \left((\text{cuts\_edges}_{\text{new}} - \text{target\_cuts})^2 - (\text{cuts\_edges}_{\text{old}} - \text{target\_cuts})^2\right)$$
 
 Gaussian
 
@@ -231,3 +230,12 @@ Have a clear runnable version so if someone stumbles upon the repo, they just wa
 -β<sub>county_splits</sub> • ((county_splits<sub>new</sub> - target_county)<sup>2</sup> - (county_splits<sub>old</sub> - target_county)<sup>2</sup>) - β<sub>cuts</sub> • ((cuts_edges<sub>new</sub> - target_cuts)<sup>2</sup> - (cuts_edges<sub>old</sub> - target_cuts)<sup>2</sup>)
 
 
+
+> **Objective Function**
+>
+> ```text
+> -β_county_splits * ((county_splits_new - target_county)^2 
+> - (county_splits_old - target_county)^2)
+> - β_cuts * ((cuts_edges_new - target_cuts)^2 
+> - (cuts_edges_old - target_cuts)^2)
+> ```
