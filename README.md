@@ -12,6 +12,7 @@ This repository analyzes what redistricting would look like in those eight state
 
 ![](images/1.png)
 
+
 For a thorough walkthrough of our analysis, please see the following report: [The Impact of the VRA on Minority Representation: What “Race-Blind” Redistricting Looks Like in Southern States](https://docs.google.com/document/d/1MZHpPIdR5elz5MzpLTaWqnESlYOkuR72L6Cy55GbeS4/edit?usp=sharing)
 
 ### Summary of the Marked Edge Walk
