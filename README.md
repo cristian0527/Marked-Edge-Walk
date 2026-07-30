@@ -211,6 +211,8 @@ Have a clear runnable version so if someone stumbles upon the repo, they just wa
 
 
 
+
+
 &emsp;Table of States' Energy Function Approach 
 | Energy Function Approach | States |
 |---|---|
@@ -218,5 +220,12 @@ Have a clear runnable version so if someone stumbles upon the repo, they just wa
 | Gaussian | Alabama, Louisiana, Mississippi, Tennessee
 
 
+
+
+```math
+-β_county_splits * ((county_splits_new - target_county)^2 
+- (county_splits_old - target_county)^2)
+- β_cuts * ((cuts_edges_new - target_cuts)^2 
+- (cuts_edges_old - target_cuts)^2)
 
 
