@@ -220,12 +220,8 @@ Have a clear runnable version so if someone stumbles upon the repo, they just wa
 | Gaussian | Alabama, Louisiana, Mississippi, Tennessee
 
 
+−β_county_splits · ((county_splits_new − target_county)² − (county_splits_old − target_county)²)  
+− β_cuts · ((cuts_edges_new − target_cuts)² − (cuts_edges_old − target_cuts)²)
 
-
-```math
--β_county_splits * ((county_splits_new - target_county)^2 
-- (county_splits_old - target_county)^2)
-- β_cuts * ((cuts_edges_new - target_cuts)^2 
-- (cuts_edges_old - target_cuts)^2)
 
 
