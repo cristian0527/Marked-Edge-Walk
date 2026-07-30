@@ -157,10 +157,12 @@ Across our eight states, we used two approaches for how we structure the energy 
 
 &emsp;*Important Notes*
 
-* Population Tolerance (ε): 
+* Population Tolerance (ε)
+
 &emsp;For each of the state’s `lct_run_{STATE}` file, the state’s file sets a population balance tolerance, epsilon. Epsilon accounts for how deviated any district’s population may be from ideal. Originally, we set this epsilon to 1% across all eight states, though found it to be too constraining; particularly, some of our seed plans were population imbalance, so initiating a walk from one of those seeds under a strict 1% tolerance caused trouble. This is because the Marked Edge walk accepts a transition if the resulting plan’s district populations fall within epsilon of ideal, so if a seed is far from the strict tolerance epsilon, it does not have much freedom to walk around the space of districting plans, especially such plans that are close to the enacted plan. In our runs, the walk was stuck when we ran ensembles. So, we loosened this to 2% for most states, with Tennessee and Florida as the exception, where we set the epsilon to 5%. For Tennessee, the problem was that the ReCom generated districting map was population imbalance, so upping the epsilon value was needed for movement. For Florida… 
 
 * Marked Edge Walk Ensemble Starting Point
+
 &emsp; Additionally, it’s worth noting the starting points for the Marked Edge Walk, whether that’s the enacted map or a randomly generated plan made with ReCom. Starting from a randomly generated plan allows us to understand whether a walk is mixing well when it is not starting from the enacted plan, where we would like the resulting plans to resemble the enacted plan. 
 
 
