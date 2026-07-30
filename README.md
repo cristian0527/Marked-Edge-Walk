@@ -78,7 +78,7 @@ Before walking through each step in depth, it is essential to first get familiar
 
 &emsp;For our analysis, we initially focused on cut-edges as our measure of compactness, and county splits. We chose these two since they reflect the overall shape of the state relative to how the enacted plan was drawn. By setting our energy functions to generate an ensemble of plans that are similar to the enacted plan, we are able to draw statistical conclusions of how democratic and black voters are treated in a state. 
 
-&emsp;Since our focus is on studying the impact of *Callais* in the South by asking what Black voting representation may look like in the South if districts were drawn race-blind and party-aware, we additionally added Republican vote share as another constraint to see what the partisan makeup of districts would look like under this kind of map-drawing procedure.
+&emsp;Since our focus is on studying the impact of *Callais* in the South with the Marked Edge Walk by asking what Black voting representation may look like in the South if districts were drawn race-blind and party-aware, we additionally added Republican vote share as another constraint to see what the partisan makeup of districts would look like under this kind of map-drawing procedure.
 
 
 ##### 3. Select an Energy Function
