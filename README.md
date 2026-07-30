@@ -222,11 +222,12 @@ Have a clear runnable version so if someone stumbles upon the repo, they just wa
 
 
 * Exponential/Minimized
+  
 -β<sub>county_splits</sub> • (county_splits<sub>new</sub> - county_splits<sub>old</sub>) - β<sub>cuts</sub> • (cuts_edges<sub>new</sub> - cuts_edges<sub>old</sub>)
 
-&emsp;Through the exponential/minimized approach, the cut-edge and county split terms of the energy function were driven by their beta weights, with no target value built into the function. Through this distribution, the betas were simultaneously deciding how strongly we care about a constraint and as well as where the walk should settle, since the presence of a target value to aim for is absent. In practice, this meant tuning for an ideal beta iteratively, more than the gaussian approach. As well, through our experiments, we discovered that the walk would drift towards a value that was not what we desired, as well as there not being mixing present.  Ultimately, since we couldn’t reliably tune the parameters so that the walk approaches near a target value we have in mind, this limitation motivated us to use the Gaussian approach across all eight states instead.
 
 * Gaussian
+
 -β<sub>county_splits</sub> • ((county_splits<sub>new</sub> - target_county)<sup>2</sup> - (county_splits<sub>old</sub> - target_county)<sup>2</sup>) - β<sub>cuts</sub> • ((cuts_edges<sub>new</sub> - target_cuts)<sup>2</sup> - (cuts_edges<sub>old</sub> - target_cuts)<sup>2</sup>)
 
 
