@@ -71,7 +71,15 @@ Before walking through each step in depth, it is essential to first get familiar
 * For Louisiana, technical issues arose in attempting to convert the processed precinct data into the dual graph we want for the Marked Edge Walk in Julia. Since we could not assemble a dual graph for the state, this means we won't have the `links` data structure in our dictionary. To work about this, we loaded Louisiana’s processed precincts `.json` in and built the graph from its `adjacency` list in the file. Since each node’s `adjacency` list stores the information of the neighboring node IDS, we iterate through every node, and for each neighbor listed in `adjacency`, we add an edge to the graph and store that edge’s shared perimeter, `share_perim`,  in a `perim_dict`. This allows us to obtain the same dual graph that the python script `json_graph.node_link_data(g)` would have given us. 
 
 ##### 2. Choose Constraints for the Energy Function
-	* Based on the question you are asking, you may want to sit with thinking about which exact parameters you want to embed in your energy function. (we should describe the purpose of what these constraints do in the energy function.)
+
+&emsp;Before building an energy function, we first need to decide what we actually want our function to care about. So, we must sit with the question we are asking and identify what properties of a districting matter for our analysis. These constraints represent the features that states care about and consider when drawing plans. Depending on the question, this may include compactness measures, county splits, population balance, or party and or/race vote share. 
+
+&emsp;These constraints matter because they are guiding the energy function during the walk. If left unconstrained, the walk over districting plans would wander over plans that may not be valid to be proposed and enacted in a state. So, integrating constraints into the energy function allows us to generate an ensemble of plans that may resemble plausible districting plans. 
+
+&emsp;For our analysis, we initially focused on cut-edges as our measure of compactness, and county splits. We chose these two since they reflect the overall shape of the state relative to how the enacted plan was drawn. By setting our energy functions to generate an ensemble of plans that are similar to the enacted plan, we are able to draw statistical conclusions of how democratic and black voters are treated in a state. 
+
+&emsp;Since our focus is on studying the impact of *Callais* in the South by asking what Black voting representation may look like in the South if districts were drawn race-blind and party-aware, we additionally added Republican vote share as another constraint to see what the partisan makeup of districts would look like under this kind of map-drawing procedure.
+
 
 ##### 3. Select an Energy Function
 
